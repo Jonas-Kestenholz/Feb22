@@ -1,0 +1,25 @@
+int board[][] = new int[8][8]; // 2D array for the board
+int sideLength = 40; // Size of each square
+
+void setup() {
+  size(320, 320); // Set canvas size to accommodate 8x8 squares
+
+  // Fill the board with alternating values using modular arithmetic
+  for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+      board[i][j] = (i + j) % 2;
+    }
+  }
+}
+
+void draw() {
+  background(255); // Clear the background
+
+  // Draw the squares based on board values
+  for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+      fill(board[i][j] == 0 ? 0 : 255); // Set fill color based on board value
+      rect(j * sideLength, i * sideLength, sideLength, sideLength); // Draw the square
+    }
+  }
+}
