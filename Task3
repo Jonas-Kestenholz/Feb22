@@ -1,0 +1,12 @@
+void setup(){
+
+  String[] kunstnere = {"L. Ron Harald","Din mama","Din papa","Din mama2","Din papa2"};
+  String[] titler = {"opel kadett","Din mama hit","Din papa hit","Din mama2 det store hit","Din papa2 det store hit"};
+  int count = 1;
+    for (int i = 0; i < kunstnere.length; i++) {
+      System.out.print(count + ". ");
+      System.out.print(kunstnere[i] + " - ");
+      System.out.println(titler[i]);
+      count++;
+  }
+}
