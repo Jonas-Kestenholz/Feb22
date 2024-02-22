@@ -1,0 +1,28 @@
+public static String takeLast(String value, int count) {
+  if (value == null || value.trim().length() == 0) {
+    return ""; // Tom streng for ugyldig input
+  }
+
+  int len = value.length();
+  if (count < 0) {
+    // Negativt count: Start fra slutningen af strengen
+    count = Math.abs(count);
+    if (count > len) {
+      return value; // Returner hele strengen
+    }
+    return value.substring(len - count);
+  } else if (count > len) {
+    // Count er højere end strengens længde
+    return value; // Returner hele strengen
+  } else {
+    // Gyldigt count
+    return value.substring(len - count);
+  }
+}
+void setup(){
+  String prut = "Tess er helt glad";
+
+String last4neg = takeLast(prut, -4); // Output: glad
+println(last4neg);
+
+}
