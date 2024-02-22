@@ -1,0 +1,36 @@
+class Square {
+  float xposition;
+  float yposition;
+
+  Square(float x, float y) {
+    this.xposition = x;
+    this.yposition = y;
+  }
+
+  void display() {
+    fill(0); // Set the square's color to black
+    rect(xposition, yposition, 20, 20); // Draw the square with size 20x20
+  }
+}
+Square[] squares = new Square[10];
+
+void setup(){
+size(400,400);
+
+//Square testSquare = new Square(50, 50);
+  //testSquare.display();
+//}
+
+  for (int i = 0; i < 10; i++) {
+    int xPos = (int) random(width); // Generate random x-position within canvas width
+    int yPos = (int) random(height); // Generate random y-position within canvas height
+    squares[i] = new Square(xPos, yPos);
+    squares[i].display();
+  }
+ for (int i = 0; i < 10; i++) {
+    int xPos = (int) random(width);
+    int yPos = (int) random(height);
+    squares[i] = new Square(xPos, yPos);
+    squares[i].display();
+  }
+}
